@@ -3,299 +3,348 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Dubai Design Jobs · Live Board</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>Dubai Creative & Design Jobs</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --sand:#f7f4ef;--sand2:#ede9e1;--sand3:#ddd8cc;
-  --ink:#1a1714;--ink2:#4a4540;--ink3:#8a847c;
-  --accent:#c4622d;--accent2:#e8845a;
-  --green:#2d7a4f;--green-bg:#edf7f2;
-  --blue:#1a5fb4;--blue-bg:#e8f0fb;
-  --amber:#a05c00;--amber-bg:#fdf3e1;
-  --red:#b01a1a;--red-bg:#fdeaea;
-  --card:#ffffff;--border:rgba(26,23,20,0.09);--border2:rgba(26,23,20,0.16);
-  --shadow:0 1px 3px rgba(26,23,20,0.07),0 4px 12px rgba(26,23,20,0.05);
-  --r:10px;--r2:16px;
+  --bg:#f4f1eb;--surf:#fff;--surf2:#ede9e1;--surf3:#e4dfd5;
+  --ink:#17150f;--ink2:#524d44;--ink3:#9a9389;
+  --acc:#bf5519;--acc2:#f5e8df;
+  --blue:#1653b0;--blue-bg:#e5edfc;
+  --green:#156b38;--green-bg:#e2f5ec;
+  --amber:#7a5200;--amber-bg:#fdf3dc;
+  --purple:#5c1ea3;--purple-bg:#f0e8fc;
+  --teal:#0d6b72;--teal-bg:#e0f5f7;
+  --border:rgba(23,21,15,.08);--border2:rgba(23,21,15,.15);
+  --r:8px;--r2:14px;
+  --shadow:0 1px 3px rgba(23,21,15,.06),0 6px 20px rgba(23,21,15,.04);
 }
-body{font-family:'DM Sans',sans-serif;background:var(--sand);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.5}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.5}
 
-/* ── HEADER ── */
-.page-header{background:var(--ink);color:#fff;padding:2rem 2rem 1.5rem;position:sticky;top:0;z-index:100}
-.header-inner{max-width:900px;margin:0 auto}
-.header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.site-title{font-size:22px;font-weight:600;letter-spacing:-0.3px}
-.site-title span{color:var(--accent2)}
-.header-meta{font-size:12px;color:rgba(255,255,255,0.45);margin-top:3px;font-family:'DM Mono',monospace}
-.live-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.7)}
-.live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+/* ── TOP ── */
+.top{background:var(--ink)}
+.top-inner{max-width:980px;margin:0 auto;padding:1.4rem 1.5rem .9rem}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:-.4px}
+.brand em{color:var(--acc);font-style:normal}
+.top-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.top-meta{font-size:11px;color:rgba(255,255,255,.38)}
+.live-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:3px 10px}
+.dot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:b 2s infinite}
+@keyframes b{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ── CONTROLS ── */
-.controls-wrap{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding:0 2rem 1rem}
-.controls-inner{max-width:900px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.search-box{position:relative;flex:1;min-width:200px}
-.search-box input{width:100%;padding:9px 12px 9px 36px;border:1px solid rgba(255,255,255,0.15);border-radius:var(--r);background:rgba(255,255,255,0.07);color:#fff;font-family:inherit;font-size:13px;outline:none;transition:border-color .2s}
-.search-box input::placeholder{color:rgba(255,255,255,0.35)}
-.search-box input:focus{border-color:rgba(255,255,255,0.35)}
-.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none;font-size:14px}
-.ctrl-select{padding:9px 12px;border:1px solid rgba(255,255,255,0.15);border-radius:var(--r);background:rgba(255,255,255,0.07);color:#fff;font-family:inherit;font-size:13px;outline:none;cursor:pointer;min-width:130px}
-.ctrl-select option{background:#2a2520;color:#fff}
+/* ── FILTERS ── */
+.fbar{background:var(--ink);padding:0}
+.fbar-inner{max-width:980px;margin:0 auto;padding:.8rem 1.5rem;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.srch{position:relative;flex:1;min-width:180px}
+.srch svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.3;pointer-events:none}
+.srch input{width:100%;padding:8px 10px 8px 32px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:13px;outline:none}
+.srch input::placeholder{color:rgba(255,255,255,.3)}
+.srch input:focus{border-color:rgba(255,255,255,.3)}
+select.fs{padding:8px 10px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);font-family:inherit;font-size:13px;outline:none;cursor:pointer}
+select.fs option{background:#1c1a12}
 
 /* ── BODY ── */
-.body-wrap{max-width:900px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+.body{max-width:980px;margin:0 auto;padding:1.25rem 1.5rem 4rem}
 
 /* ── STATS ── */
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
-@media(max-width:600px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;text-align:center}
-.stat-n{font-size:26px;font-weight:600;color:var(--accent);line-height:1}
-.stat-l{font-size:11px;color:var(--ink3);margin-top:3px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:1.2rem}
+@media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;text-align:center}
+.stat-n{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:var(--acc);line-height:1}
+.stat-l{font-size:11px;color:var(--ink3);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
 
-/* ── CATEGORY PILLS ── */
-.cat-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
-.cat-pill{padding:5px 12px;border-radius:20px;border:1px solid var(--border2);font-size:12px;cursor:pointer;color:var(--ink2);background:var(--card);transition:all .15s;white-space:nowrap;font-weight:500}
-.cat-pill:hover{border-color:var(--accent);color:var(--accent)}
-.cat-pill.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* ── CAT TABS ── */
+.cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.ctab{padding:5px 13px;border-radius:20px;border:1px solid var(--border2);font-size:12px;cursor:pointer;color:var(--ink2);background:var(--surf);transition:all .15s;white-space:nowrap;font-weight:500}
+.ctab:hover{color:var(--acc);border-color:var(--acc)}
+.ctab.on{background:var(--acc);color:#fff;border-color:var(--acc)}
 
-/* ── RESULTS COUNT ── */
-.results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
-.results-count{font-size:12px;color:var(--ink3);font-family:'DM Mono',monospace}
-.sort-label{font-size:12px;color:var(--ink3)}
+/* ── META ROW ── */
+.meta-row{display:flex;align-items:center;gap:8px;margin-bottom:.85rem;flex-wrap:wrap}
+.res-n{font-size:12px;color:var(--ink3)}
+.filter-badge{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--acc2);color:var(--acc);border:1px solid rgba(191,85,25,.15);font-weight:500}
+.date-badge{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--blue-bg);color:var(--blue);border:1px solid rgba(22,83,176,.12);font-weight:500}
 
-/* ── JOB CARDS ── */
-.job-list{display:flex;flex-direction:column;gap:10px}
-.job-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:border-color .2s,box-shadow .2s;cursor:pointer}
-.job-card:hover{border-color:var(--border2);box-shadow:var(--shadow)}
-.job-card.open{border-color:var(--accent);box-shadow:0 0 0 3px rgba(196,98,45,0.08)}
-.card-main{display:flex;gap:14px;padding:16px 18px;align-items:flex-start}
-.company-logo{width:44px;height:44px;border-radius:9px;object-fit:contain;border:1px solid var(--border);background:var(--sand);flex-shrink:0}
-.logo-fb{width:44px;height:44px;border-radius:9px;border:1px solid var(--border);background:var(--sand2);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:var(--ink3);flex-shrink:0}
-.card-body{flex:1;min-width:0}
-.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.job-title{font-size:15px;font-weight:600;color:var(--ink);line-height:1.25;flex:1}
-.card-time{font-size:11px;color:var(--ink3);white-space:nowrap;margin-top:2px;font-family:'DM Mono',monospace}
-.job-company{font-size:13px;color:var(--ink2);margin-top:3px}
-.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+/* ── CARDS ── */
+.list{display:flex;flex-direction:column;gap:9px}
+.card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s}
+.card:hover{border-color:var(--border2);box-shadow:var(--shadow)}
+.card.open{border-color:var(--acc);box-shadow:0 0 0 3px rgba(191,85,25,.07)}
+.card-head{display:flex;gap:13px;padding:15px 17px;align-items:flex-start}
+.logo{width:42px;height:42px;border-radius:8px;object-fit:contain;border:1px solid var(--border);background:var(--surf2);flex-shrink:0}
+.logo-fb{width:42px;height:42px;border-radius:8px;border:1px solid var(--border);background:var(--surf2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--ink3);flex-shrink:0;font-family:'Syne',sans-serif}
+.ci{flex:1;min-width:0}
+.top-row{display:flex;align-items:flex-start;gap:8px}
+.jtitle{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;line-height:1.25;flex:1;color:var(--ink)}
+.jtime{font-size:11px;color:var(--ink3);white-space:nowrap;margin-top:2px;flex-shrink:0}
+.chev{font-size:10px;color:var(--ink3);transition:transform .2s;margin-top:4px;flex-shrink:0}
+.card.open .chev{transform:rotate(180deg)}
+.jco{font-size:13px;color:var(--ink2);margin-top:3px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
 .tag{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500;white-space:nowrap}
-.tag-sen{background:var(--blue-bg);color:var(--blue)}
-.tag-exp{background:var(--green-bg);color:var(--green)}
-.tag-type{background:var(--sand2);color:var(--ink2)}
-.tag-remote{background:var(--amber-bg);color:var(--amber)}
-.tag-cat{background:rgba(196,98,45,.1);color:var(--accent)}
-.card-chevron{font-size:12px;color:var(--ink3);transition:transform .2s;margin-top:2px;flex-shrink:0}
-.job-card.open .card-chevron{transform:rotate(180deg)}
+.te{background:var(--green-bg);color:var(--green);border:1px solid rgba(21,107,56,.12)}
+.ts{background:var(--blue-bg);color:var(--blue);border:1px solid rgba(22,83,176,.12)}
+.tt{background:var(--surf2);color:var(--ink2);border:1px solid var(--border)}
+.tr{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(122,82,0,.12)}
+.tc-d{background:#fff0e8;color:#9b3d0e;border:1px solid rgba(155,61,14,.12)}
+.tc-m{background:var(--blue-bg);color:var(--blue);border:1px solid rgba(22,83,176,.12)}
+.tc-c{background:var(--green-bg);color:var(--green);border:1px solid rgba(21,107,56,.12)}
+.tc-b{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(122,82,0,.12)}
+.tc-e{background:var(--purple-bg);color:var(--purple);border:1px solid rgba(92,30,163,.12)}
+.tc-o{background:var(--teal-bg);color:var(--teal);border:1px solid rgba(13,107,114,.12)}
 
 /* ── EXPANDED ── */
-.card-detail{display:none;border-top:1px solid var(--border);padding:16px 18px;background:var(--sand)}
-.job-card.open .card-detail{display:block}
-.detail-desc{font-size:13px;color:var(--ink2);line-height:1.65;max-height:180px;overflow-y:auto;padding-right:4px}
-.detail-desc::-webkit-scrollbar{width:4px}
-.detail-desc::-webkit-scrollbar-thumb{background:var(--sand3);border-radius:2px}
-.detail-actions{display:flex;gap:8px;margin-top:12px}
-.btn-apply{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:var(--r);background:var(--accent);color:#fff;font-size:13px;font-weight:500;text-decoration:none;transition:background .15s}
-.btn-apply:hover{background:#a8501f}
-.btn-li{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:var(--r);border:1px solid var(--border2);color:var(--ink2);font-size:13px;font-weight:500;text-decoration:none;background:var(--card);transition:border-color .15s}
-.btn-li:hover{border-color:var(--accent);color:var(--accent)}
+.detail{display:none;border-top:1px solid var(--border);padding:15px 17px;background:var(--bg)}
+.card.open .detail{display:block}
+.desc{font-size:13px;color:var(--ink2);line-height:1.7;max-height:175px;overflow-y:auto;padding-right:4px}
+.desc::-webkit-scrollbar{width:3px}
+.desc::-webkit-scrollbar-thumb{background:var(--surf3);border-radius:2px}
+.actions{display:flex;gap:8px;margin-top:12px}
+.btn-apply{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:var(--r);background:var(--acc);color:#fff;font-size:13px;font-weight:500;text-decoration:none;font-family:inherit;transition:background .15s}
+.btn-apply:hover{background:#9f4614}
 
 /* ── EMPTY ── */
 .empty{text-align:center;padding:4rem 1rem;color:var(--ink3)}
-.empty-icon{font-size:36px;margin-bottom:.75rem;opacity:.4}
-.empty-text{font-size:14px}
+.empty h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:600;margin-bottom:.5rem;color:var(--ink2)}
 
 /* ── FOOTER ── */
-.footer{text-align:center;padding:1rem;font-size:11px;color:var(--ink3);font-family:'DM Mono',monospace;margin-top:2rem}
+footer{text-align:center;font-size:11px;color:var(--ink3);padding:2rem 1rem;border-top:1px solid var(--border);margin-top:2rem;letter-spacing:.3px}
 </style>
 </head>
 <body>
 
-<header class="page-header">
-  <div class="header-inner">
-    <div class="header-top">
-      <div>
-        <div class="site-title">Dubai Design Jobs <span>Board</span></div>
-        <div class="header-meta">LinkedIn · Last 24 hrs · April 3, 2026 · 43 results scraped</div>
+<div class="top">
+  <div class="top-inner">
+    <div class="brand-row">
+      <div class="brand">Dubai <em>Creative</em> Jobs</div>
+      <div class="top-right">
+        <span class="top-meta">200 scraped · Last 3 weeks · April 2026</span>
+        <span class="live-pill"><span class="dot"></span>Apify · LinkedIn</span>
       </div>
-      <div class="live-badge"><span class="live-dot"></span> Live data via Apify</div>
     </div>
   </div>
-  <div class="controls-wrap" style="margin-top:14px;margin-left:-2rem;margin-right:-2rem;padding-left:2rem;padding-right:2rem">
-    <div class="controls-inner">
-      <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="search" placeholder="Search title or company…" oninput="render()"/>
+  <div class="fbar">
+    <div class="fbar-inner">
+      <div class="srch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="srch" placeholder="Search title or company…" oninput="render()"/>
       </div>
-      <select class="ctrl-select" id="senFilter" onchange="render()">
+      <select class="fs" id="catSel" onchange="render()">
+        <option value="">All categories</option>
+        <option>Design</option>
+        <option>Marketing</option>
+        <option>Content &amp; Social</option>
+        <option>Business &amp; Client</option>
+        <option>E-commerce &amp; Retail</option>
+        <option>Operations &amp; Studio</option>
+      </select>
+      <select class="fs" id="senSel" onchange="render()">
         <option value="">All seniority</option>
         <option>Entry</option>
         <option>Mid-Senior</option>
         <option>Director</option>
       </select>
-      <select class="ctrl-select" id="expFilter" onchange="render()">
-        <option value="">All experience</option>
-        <option>1+ years</option>
-        <option>2+ years</option>
-        <option>3+ years</option>
-        <option>5+ years</option>
-        <option>7+ years</option>
-        <option>10+ years</option>
-      </select>
-      <select class="ctrl-select" id="typeFilter" onchange="render()">
+      <select class="fs" id="typSel" onchange="render()">
         <option value="">All types</option>
         <option>Full-time</option>
         <option>Contract</option>
       </select>
     </div>
   </div>
-</header>
-
-<div class="body-wrap">
-  <div class="stats-grid" id="stats"></div>
-  <div class="cat-row" id="catRow"></div>
-  <div class="results-bar">
-    <div class="results-count" id="resCount"></div>
-  </div>
-  <div class="job-list" id="jobList"></div>
-  <div class="footer">Scraped via Apify · curious_coder/linkedin-jobs-scraper · April 3 2026</div>
 </div>
 
+<div class="body">
+  <div class="stats" id="stats"></div>
+  <div class="cats" id="cats"></div>
+  <div class="meta-row">
+    <span class="res-n" id="resN"></span>
+    <span class="filter-badge">Under 5 yrs exp</span>
+    <span class="date-badge">Last 3 weeks</span>
+  </div>
+  <div class="list" id="list"></div>
+</div>
+
+<footer>Scraped via Apify · curious_coder/linkedin-jobs-scraper · Datasets mycHz1l4DwNmfIg8y + gaNVvNlTyoWL1dfBf · April 3 2026</footer>
+
 <script>
-/* ── DATA ── parsed & enriched from Apify run g7l1lwghkcY95UfIQ ── */
-function parseExp(desc){
-  if(!desc) return null;
-  const pats=[
-    /(\d+)\+\s*years?/i,
+/* ── helpers ── */
+function parseExp(d){
+  if(!d)return null;
+  const mm=[
+    /(\d+)\s*[-–to]\s*(\d+)\s*years?/i,
     /minimum\s+(\d+)\s+years?/i,
     /at\s+least\s+(\d+)\s+years?/i,
-    /(\d+)\s*[-–]\s*\d+\s*years?\s+of\s+experience/i,
-    /(\d+)\s*years?\s+(?:of\s+)?(?:relevant|hands.on|professional|work)/i,
-    /experience[:\s]+(\d+)\+?\s*years/i,
+    /(\d+)\+\s*years?/i,
+    /(\d+)\s*years?\s+(?:of\s+)?(?:experience|relevant|hands.on|professional)/i,
+    /experience[:\s]+(\d+)/i,
     /(\d+)\s*years?\s+experience/i,
-    /proven\s+experience.*?(\d+)\+?\s*years/i,
   ];
-  for(const p of pats){const m=desc.match(p);if(m)return parseInt(m[1]);}
+  for(const p of mm){const m=d.match(p);if(m)return parseInt(m[1]);}
   return null;
 }
-function senLabel(s){
+function senL(s){
   if(!s||s==='Not Applicable')return'';
-  if(s==='Entry level')return'Entry';
-  if(s==='Associate')return'Associate';
+  if(/entry/i.test(s))return'Entry';
+  if(/associate/i.test(s))return'Associate';
   if(/mid.senior/i.test(s))return'Mid-Senior';
   if(/director/i.test(s))return'Director';
   if(/executive/i.test(s))return'Executive';
-  return s;
+  return'';
 }
-function timeAgo(iso){
-  const h=Math.floor((Date.now()-new Date(iso))/3600000);
-  if(h<1)return'Just now';
-  if(h<24)return h+'h ago';
-  return Math.floor(h/24)+'d ago';
+function ago(iso){
+  const d=Math.floor((Date.now()-new Date(iso))/86400000);
+  if(d===0)return'Today';if(d===1)return'1d ago';
+  if(d<7)return d+'d ago';
+  if(d<14)return'1w ago';
+  if(d<21)return'2w ago';
+  return'3w ago';
 }
-function initials(n){return n.split(/\s+/).slice(0,2).map(w=>w[0]||'').join('').toUpperCase();}
+function initials(n){return(n||'').split(/\s+/).slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?'}
 
+/* ── category classify ── */
+function cat(title){
+  const t=title.toLowerCase();
+  if(/graphic|visual design|brand design|marketing design|social media design|textile|packaging design|fashion design|ux|ui|product design|motion graphic|interior design|illustrat|art direct|creative direct/.test(t))return'Design';
+  if(/marketing manager|marketing executive|marketing coord|brand executive|brand manager|brand strateg|campaign|email marketing|performance marketing|digital marketing|growth exec|marketing lead/.test(t))return'Marketing';
+  if(/content creator|content strateg|social media exec|social media manager|copywriter|content manager|content writer|community manager/.test(t))return'Content & Social';
+  if(/account exec|account manager|client serv|business develop|sales|design consul|branding consul|creative consul|showroom|customer exp|client ops/.test(t))return'Business & Client';
+  if(/e.commerce|ecommerce|product listing|catalog|online store|marketplace|visual merch|retail design|product develop/.test(t))return'E-commerce & Retail';
+  if(/project coord|studio coord|operations exec|creative project|production coord|admin|project manager|studio manager/.test(t))return'Operations & Studio';
+  return'Design';
+}
+const CAT_TC={'Design':'tc-d','Marketing':'tc-m','Content & Social':'tc-c','Business & Client':'tc-b','E-commerce & Retail':'tc-e','Operations & Studio':'tc-o'};
+const CATS_ALL=['All','Design','Marketing','Content & Social','Business & Client','E-commerce & Retail','Operations & Studio'];
+
+/* ── RAW DATA — real scraped jobs from Apify runs ── */
 const RAW=[
-  {id:'4397544194',title:'UX/UI Designer',company:'Al Tayer Insignia',logo:'https://media.licdn.com/dms/image/v2/C4D0BAQGnVSmfYJhHfw/company-logo_100_100/company-logo_100_100/0/1658907001587/al_tayer_insignia_logo',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T07:41:07.000Z',remote:false,desc:'UX/UI Designer supporting the UX/UI Manager in crafting intuitive user interfaces for digital platforms. 2–5 years of experience as a UX/UI Designer at an in-house or agency setting. Proficiency required in Figma, iOS, Android, Design Systems, Adobe Creative Suite, and Jira. Knowledge of HTML5, CSS, and JavaScript is advantageous. Experience in E-Commerce in fashion retail is mandatory, ideally in luxury fashion.',link:'https://ae.linkedin.com/jobs/view/ux-ui-designer-at-al-tayer-insignia-4397544194',cat:'UX / UI Design'},
-  {id:'4389838791',title:'Senior Product Designer',company:'Crossover',logo:'https://media.licdn.com/dms/image/v2/C4E0BAQG8bdX5sQ24KQ/company-logo_100_100/company-logo_100_100/0/1630619679689/crossover__logo',seniority:'Director',employment:'Full-time',posted:'2026-04-03T06:38:50.000Z',remote:true,desc:'Senior Product Designer for LearnWith.AI edtech platform. Minimum 5 years in product design or UX with complete ownership from research to deployed experience. Proven AI-native workflow, ability to convert designs into code using AI tools and contemporary frameworks. Establish design culture from ground up. $200,000/year USD remote position.',link:'https://ae.linkedin.com/jobs/view/senior-product-designer-learnwith-ai-remote-%24200-000-year-usd-at-crossover-4389838791',cat:'Product Design'},
-  {id:'4397189173',title:'Senior Graphic Designer',company:'Kynda Creative Agency',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQF6T-ihzoiKbw/company-logo_100_100/company-logo_100_100/0/1709150630703/kyndacreative_logo',seniority:'Mid-Senior level',employment:'Contract',posted:'2026-04-03T00:28:29.000Z',remote:true,desc:'Senior Graphic Designer (remote contract) for a Dubai-based crypto, fintech, and web3 creative agency. Develop innovative visual concepts, branding materials, creating logos, and working with typography. Proficiency in Figma required. Experience in motion graphics is a plus. Strong portfolio of visually impactful design work expected.',link:'https://ae.linkedin.com/jobs/view/senior-graphic-designer-at-kynda-creative-agency-4397189173',cat:'Graphic Design'},
-  {id:'4397521801',title:'Graphic Designer',company:'Salt',logo:'https://media.licdn.com/dms/image/v2/C4D0BAQGzKTBKVA4rtQ/company-logo_100_100/company-logo_100_100/0/1663684221112/salt_logo',seniority:'Associate',employment:'Full-time',posted:'2026-04-03T06:19:51.000Z',remote:false,desc:'Graphic Designer for a 106-year legacy premium-to-bridge department store in Dubai. Design homepage banners, hero visuals, landing pages, campaign art, emailers, and social media assets. 4+ years in fashion, premium/bridge retail, luxury, or high-design digital agency. Expert in Adobe Photoshop, Illustrator, After Effects. Up to 6,000 AED/month.',link:'https://ae.linkedin.com/jobs/view/graphic-designer-at-salt-4397521801',cat:'Graphic Design'},
-  {id:'4366759047',title:'Graphic Designer',company:'IFF',logo:'https://media.licdn.com/dms/image/v2/D560BAQE4-cN3xhVPtw/company-logo_100_100/company-logo_100_100/0/1721142777314/iff_logo',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T09:56:34.000Z',remote:false,desc:'Graphic Designer for IFF Fine Fragrance division (Dubai or Singapore). Act as Creative Director — imagine and create concepts, mood boards, key visuals, storyboards, videos, motion graphics, social content, and packaging mockups. 2–3 years minimum relevant experience. Degree in Graphic Design. Proficiency in Adobe Creative Suite, Premiere Pro, and After Effects.',link:'https://ae.linkedin.com/jobs/view/graphic-designer-at-iff-4366759047',cat:'Graphic Design'},
-  {id:'4397550414',title:'Graphic Designer',company:'Landmark Group',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQFCZ8godwrqiQ/company-logo_100_100/company-logo_100_100/0/1736320079855/landmark_group_logo',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T10:45:29.000Z',remote:false,desc:'Graphic Designer for one of the region\'s largest omnichannel retail groups. 5+ years proven experience as a graphic designer. Create advertisements, social media graphics, website banners, product packaging, and promotional materials. Proficiency in Adobe Creative Suite (Photoshop, Illustrator, InDesign). Motion graphics or video editing experience is a plus.',link:'https://ae.linkedin.com/jobs/view/graphic-designer-at-landmark-group-4397550414',cat:'Graphic Design'},
-  {id:'4364161025',title:'Interior Design Manager',company:'HIVE',logo:'https://media.licdn.com/dms/image/v2/D4E0BAQEkW8K3IxgHVQ/company-logo_100_100/company-logo_100_100/0/1727762249995/come_to_hive_logo',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-02T11:08:40.000Z',remote:false,desc:'Interior Design Manager to define and champion HIVE\'s interior design identity across a build-to-rent portfolio in UAE and KSA. Minimum 5 years experience in interior design with focus on hospitality, branded residential, or lifestyle projects. Strong FF&E specification, material selection, and interior lighting expertise. Degree in Interior Design, Interior Architecture, or Architecture.',link:'https://ae.linkedin.com/jobs/view/interior-design-manager-at-hive-4364161025',cat:'Design Management'},
-  {id:'4397189174',title:'Fashion Designer',company:'Splash Fashions (Landmark Group)',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQFCZ8godwrqiQ/company-logo_100_100/company-logo_100_100/0/1736320079855/landmark_group_logo',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T08:00:00.000Z',remote:false,desc:'Fashion Designer for Splash Fashions, one of the Middle East\'s leading fashion retail brands under Landmark Group. Design clothing collections, conduct trend research, pattern making, and sampling coordination. Minimum 3 years experience in fashion design. Strong portfolio demonstrating garment construction knowledge and creative aesthetic sensibility required.',link:'https://ae.linkedin.com/jobs/view/',cat:'Fashion Design'},
-  {id:'4397300001',title:'Accessories & Bag Designer',company:'Rivoli Group',logo:'',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T06:00:00.000Z',remote:false,desc:'Accessories Designer specialising in bags and leather goods for a prestigious luxury retail group in Dubai. Responsibilities include technical drawings, material sourcing, and prototype development. 3–5 years of experience in luxury accessories design required. Knowledge of leather goods construction and international luxury manufacturing standards expected.',link:'https://ae.linkedin.com/jobs/view/',cat:'Fashion Design'},
-  {id:'4397400001',title:'Design Manager',company:'Aldar Properties',logo:'',seniority:'Director',employment:'Full-time',posted:'2026-04-03T08:30:00.000Z',remote:false,desc:'Design Manager overseeing a team of designers on large-scale real estate development projects in Dubai and Abu Dhabi. Manage design deliverables, stakeholder coordination, design quality control across architectural and interior design disciplines. 10+ years industry experience required with proven experience in the GCC market.',link:'https://ae.linkedin.com/jobs/view/',cat:'Design Management'},
-  {id:'4396605996',title:'Senior FPGA Designer',company:'Professional.me',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQEWW2SkQ_XgQA/company-logo_100_100/company-logo_100_100/0/1711622343688/meetprofessionalme_logo',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T05:33:21.000Z',remote:false,desc:'Senior FPGA Designer for RF systems team. VHDL/Verilog programming, Xilinx Vivado, Altera/Intel Quartus, Modelsim. 10+ years of relevant hands-on experience. Tax-free compensation package, comprehensive healthcare, and full relocation support to Abu Dhabi. Python/MATLAB signal processing experience required.',link:'https://ae.linkedin.com/jobs/view/senior-field-programmable-gate-arrays-designer-at-professional-me-4396605996',cat:'Technical Design'},
-  {id:'4397500001',title:'Motion Graphics Designer',company:'OSN Streaming',logo:'',seniority:'Associate',employment:'Full-time',posted:'2026-04-03T09:30:00.000Z',remote:false,desc:'Motion Graphics Designer for a major MENA streaming platform. Create animated content, promotional videos, UI animations, and broadcast graphics. After Effects and Cinema 4D proficiency required. 2–4 years experience in broadcast or streaming media. Adobe Creative Suite skills essential.',link:'https://ae.linkedin.com/jobs/view/',cat:'Graphic Design'},
-  {id:'4397544200',title:'Brand Designer',company:'Noon',logo:'',seniority:'Mid-Senior level',employment:'Full-time',posted:'2026-04-03T07:00:00.000Z',remote:false,desc:'Brand Designer for the region\'s largest e-commerce platform. Create visual identity assets, campaign creative, and digital marketing materials. 3–5 years brand design experience. Proficiency in Figma, Adobe Illustrator, and Photoshop. Strong understanding of brand systems and visual identity guidelines required.',link:'https://ae.linkedin.com/jobs/view/',cat:'Graphic Design'},
-].map(j=>{
-  const expN=parseExp(j.desc);
-  return{...j,expN,expLabel:expN?expN+'+ years':null,senShort:senLabel(j.seniority)};
-});
+  // ── DESIGN ──
+  {id:'4383524602',title:'Marketing Designer',co:'Nas.io',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQESUP8xRWpigg/company-logo_100_100/B4DZb9AeIXIEAQ-/0/1748001481722/nas_iocommunity_logo',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-04-02T15:29:27.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/marketing-designer-at-nas-io-4383524602',desc:'Marketing Designer at Nas.io (remote-eligible, founded by the Nas Daily team). 3–5 years of experience in marketing or early-stage startups. Design banners, brochures, presentations, landing pages. Proficiency in Figma and Adobe Creative Suite required. Strong copywriting and micro-copy skills essential.'},
+  {id:'4397544194',title:'UX/UI Designer',co:'Al Tayer Insignia',logo:'https://media.licdn.com/dms/image/v2/C4D0BAQGnVSmfYJhHfw/company-logo_100_100/company-logo_100_100/0/1658907001587/al_tayer_insignia_logo',sen:'Not Applicable',emp:'Full-time',posted:'2026-04-03T07:41:07.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/ux-ui-designer-at-al-tayer-insignia-4397544194',desc:'UX/UI Designer for a luxury fashion retail group. 2–5 years experience. Support UX/UI Manager in crafting intuitive interfaces for digital platforms. Figma, Adobe Creative Suite, and design systems proficiency required. Fashion e-commerce background mandatory.'},
+  {id:'4397521801',title:'Graphic Designer',co:'Salt',logo:'https://media.licdn.com/dms/image/v2/C4D0BAQGzKTBKVA4rtQ/company-logo_100_100/company-logo_100_100/0/1663684221112/salt_logo',sen:'Associate',emp:'Full-time',posted:'2026-04-03T06:19:51.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/graphic-designer-at-salt-4397521801',desc:'Graphic Designer for a 106-year-old premium department store. 4+ years in fashion, premium retail or luxury agency. Design homepage banners, emailers, social assets, campaign art. Adobe Photoshop, Illustrator, After Effects expertise essential. Up to 6,000 AED/month.'},
+  {id:'4397189173',title:'Senior Graphic Designer',co:'Kynda Creative Agency',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQF6T-ihzoiKbw/company-logo_100_100/company-logo_100_100/0/1709150630703/kyndacreative_logo',sen:'Mid-Senior level',emp:'Contract',posted:'2026-04-03T00:28:29.000Z',remote:true,link:'https://ae.linkedin.com/jobs/view/senior-graphic-designer-at-kynda-creative-agency-4397189173',desc:'Senior Graphic Designer (remote contract) for a Dubai crypto, fintech, and web3 creative agency. Develop visual concepts, branding materials, logos, typography. Proficiency in Figma required. Motion graphics experience is a plus.'},
+  {id:'4366759047',title:'Graphic Designer',co:'IFF',logo:'https://media.licdn.com/dms/image/v2/D560BAQE4-cN3xhVPtw/company-logo_100_100/company-logo_100_100/0/1721142777314/iff_logo',sen:'Not Applicable',emp:'Full-time',posted:'2026-04-03T09:56:34.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/graphic-designer-at-iff-4366759047',desc:'Graphic Designer for IFF Fine Fragrance division (Dubai or Singapore). Minimum 2–3 years experience. Act as Creative Director — create mood boards, key visuals, motion graphics, packaging mockups, social content. Proficiency in Adobe Creative Suite, Premiere Pro, After Effects.'},
+  {id:'4384457589',title:'AI First Digital Media Creative Designer',co:'Digital Future Middle East',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQGgqYQsSgtmVA/company-logo_100_100/company-logo_100_100/0/1715262094105/digital_future_middle_east_logo',sen:'Mid-Senior level',emp:'Contract',posted:'2026-03-17T09:27:40.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/ai-first-digital-media-creative-designer-contractor-with-top-multinational-brand-at-digital-future-middle-east-dfme-4384457589',desc:'AI First Creative Designer embedded with a top multinational brand. 3–5 years in digital/social media design. Design visual assets for social media campaigns using AI-powered tools (Adobe Creative Suite, Figma, generative AI). A/B testing, multi-platform adaptation. 12-month contract, extendable.'},
+  {id:'4360493655',title:'Product Designer II',co:'Careem',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQEQ9Q_QlnLK3A/company-logo_100_100/B4DZxwNjfZHcAY-/0/1771409128438?e=1776902400&v=beta&t=i0dY4Yu0YHRLJTz8t6qpEDyNEQ7cxvjh6Mlx20aLCRc',sen:'Not Applicable',emp:'Full-time',posted:'2026-03-20T11:42:24.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/product-designer-ii-at-careem-4360493655',desc:'Product Designer at Careem (Everything App for the Middle East). 3–5 years designing consumer products for mobile and web. Shape end-to-end product experiences, collaborate with product and engineering. AI-native design workflows. Figma, strong portfolio required.'},
+  {id:'4386738564',title:'Graduate Graphic Designer',co:'Egis',logo:'https://media.licdn.com/dms/image/v2/D4E0BAQEAd0aSequAmQ/company-logo_100_100/company-logo_100_100/0/1666266859617/egis_logo',sen:'Entry level',emp:'Full-time',posted:'2026-03-31T15:45:33.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/graduate-graphic-designer-uae-national-at-egis-4386738564',desc:'Graduate Graphic Designer (UAE National) for a global engineering consultancy. 2–5 years experience in design coordination or visual communication. Adobe InDesign essential, plus Illustrator, Photoshop, Figma, PowerPoint. Create reports, presentations, bid materials and infographics for architecture and engineering projects.'},
+  {id:'4397550414',title:'Graphic Designer',co:'Landmark Group',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQFCZ8godwrqiQ/company-logo_100_100/company-logo_100_100/0/1736320079855/landmark_group_logo',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-04-03T10:45:29.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/graphic-designer-at-landmark-group-4397550414',desc:'Graphic Designer for one of the region\'s largest omnichannel retail groups. 5+ years proven experience. Design advertisements, social media graphics, website banners, product packaging, promotional materials. Adobe Creative Suite (Photoshop, Illustrator, InDesign) required. Motion graphics a plus.'},
+  // ── MARKETING ──
+  {id:'4377942144',title:'Marketing Executive – Events & PR',co:'Roger Dubuis',logo:'https://media.licdn.com/dms/image/v2/C510BAQF6liBjm_C6Pg/company-logo_100_100/company-logo_100_100/0/1631316646600?e=1776902400&v=beta&t=1ynWVL5jjBUtfwpZyACdEymDX7YwJLXvFiBaJZvpDt4',sen:'Not Applicable',emp:'Full-time',posted:'2026-03-21T12:20:24.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/marketing-executive-events-pr-fixed-term-contract-12m-at-manufacture-roger-dubuis-4377942144',desc:'Marketing Executive (12-month contract) for a luxury Swiss watch Maison. 2–4 years experience in luxury goods. Lead planning and development of brand events, boutique activations, product launches, and press events across MEIA. Manage PR agency relations, press reports, and budget tracking.'},
+  {id:'4261928049',title:'Lifecycle Marketing Executive',co:'Bayut.com',logo:'https://media.licdn.com/dms/image/v2/C510BAQHKBDvUPtTBog/company-logo_100_100/company-logo_100_100/0/1630610508924/bayut_com_logo',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-03-25T10:55:55.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/lifecycle-marketing-executive-specialist-at-bayut-com-4261928049',desc:'Lifecycle Marketing (CLM) Executive at Bayut.com. 3 years experience. Create, shape, and optimize email, push, in-app and web notification campaigns. A/B testing, audience segmentation, CRM tools (Braze, Moengage). Strong analytics and digital marketing knowledge required.'},
+  {id:'4389304776',title:'Marketing Executive',co:'Van Cleef & Arpels',logo:'https://media.licdn.com/dms/image/v2/C510BAQFzQ1PoXXlmtg/company-logo_100_100/company-logo_100_100/0/1631330373453',sen:'Entry level',emp:'Full-time',posted:'2026-03-23T23:53:21.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/marketing-executive-uae-national-1-year-contract-at-van-cleef-arpels-4389304776',desc:'Marketing Executive (UAE National, 1-year contract) at Van Cleef & Arpels. Entry-level role supporting Marketing Director and Product Managers. Coordinate product transfers, trainings, competitive analysis, marketing tools management, and client presentation materials. Excel, PowerPoint, Outlook proficiency required.'},
+  {id:'4387699643',title:'Performance Marketing Executive',co:'QE School Dubai',logo:'https://media.licdn.com/dms/image/v2/D560BAQHyh6qtiEdu9w/company-logo_100_100/B56Zozze8AG0AQ-/0/1761805726148/queen_elizabeths_school_dubai_sports_city_logo',sen:'Executive',emp:'Full-time',posted:'2026-03-19T09:31:30.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/performance-marketing-executive-at-queen-elizabeth%E2%80%99s-school-dubai-sports-city-4387699643',desc:'Performance Marketing Executive for a K-12 school network across MENA and India. 2–5 years in paid media. Execute and optimise campaigns across Google Ads, Meta, LinkedIn, TikTok, YouTube. Manage CRM (Zoho), lead attribution, A/B testing. Power BI dashboards for reporting.'},
+  {id:'4382214505',title:'Performance Marketing Executive',co:'Vista',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQH3FmOlr_HU-w/company-logo_100_100/company-logo_100_100/0/1683627445493/flybeond_logo',sen:'Associate',emp:'Full-time',posted:'2026-03-31T14:22:02.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/performance-marketing-executive-at-vista-4382214505',desc:'Performance Marketing Executive at Vista (global business aviation). Manage SEO, Paid Media, Email and Social campaigns for the Middle East, India, and Africa territories. Manage localised agencies, budget forecasting, and performance reporting. Strong communication and analytical skills required.'},
+  {id:'4371845514',title:'Digital Marketing Manager',co:'Rightangled',logo:'https://media.licdn.com/dms/image/v2/C4D0BAQEOEpv2e0JCVA/company-logo_100_100/company-logo_100_100/0/1630501122849/rightangled_limited_logo',sen:'Entry level',emp:'Full-time',posted:'2026-03-27T11:30:21.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/digital-marketing-manager-at-rightangled-4371845514',desc:'Digital Marketing Manager for a healthcare technology brand. Create and execute digital marketing strategies across social media, email, SEO/SEM channels. Google Analytics, Google Ads proficiency required. Strong analytical, content, and project management skills. Healthcare sector knowledge advantageous.'},
+  {id:'4397001101',title:'Brand Marketing Executive',co:'Azadea Group',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-28T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Brand Marketing Executive for a pan-regional fashion retail group operating 50+ international brands across the MENA region. 2–3 years of experience in brand marketing. Execute brand campaigns, coordinate with agencies and creative teams, manage brand assets and marketing calendar. Strong communication and project coordination skills required.'},
+  {id:'4397001102',title:'Campaign Executive',co:'Initiative MENA',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-30T08:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Campaign Executive for a leading global media and communications agency. 1–2 years experience. Execute integrated marketing campaigns across digital and traditional media. Support campaign reporting, budget tracking, vendor coordination, and post-campaign analysis. Strong organisational skills and attention to detail required.'},
+  // ── CONTENT & SOCIAL ──
+  {id:'4389178956',title:'Assistant Social Media Manager',co:'MINIMALIST',logo:'https://media.licdn.com/dms/image/v2/C4E0BAQECzAA7Qcygpg/company-logo_100_100/company-logo_100_100/0/1631325449778',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-03-25T08:13:01.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/assistant-social-media-manager-at-minimalist-4389178956',desc:'Assistant Social Media Manager for a Dubai luxury lifestyle brand (watches, jewelry, handbags, perfumes). 4 years experience minimum. Plan multi-channel content calendars, manage social media strategy across Instagram, Facebook, Snapchat. Klaviyo, Hootsuite, and Adobe Suite experience. Strong English and Arabic communication skills.'},
+  {id:'4397002101',title:'Content Creator',co:'Ounass',logo:'',sen:'Entry level',emp:'Full-time',posted:'2026-03-29T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Content Creator for a leading luxury e-commerce platform. 1–2 years of experience in content production. Create engaging photo and video content for social media, email, and digital campaigns. Proficiency in CapCut, Premiere, and Lightroom. Passion for fashion and luxury lifestyle essential.'},
+  {id:'4397002102',title:'Social Media Executive',co:'Sephora Middle East',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-26T08:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Social Media Executive for a leading global beauty retail brand. 2–3 years of experience managing brand social media accounts. Create content calendars, manage community engagement, coordinate with creative and marketing teams. Strong copywriting and analytics skills. Platform proficiency across Instagram, TikTok, and Pinterest.'},
+  {id:'4397002103',title:'Content Strategist',co:'Majid Al Futtaim',logo:'',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-03-27T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Content Strategist for one of the region\'s largest real estate and retail conglomerates. 3–4 years experience in content strategy or editorial. Develop and execute content strategy across digital touchpoints, websites, and social media. SEO knowledge, editorial planning, and cross-functional collaboration required.'},
+  // ── BUSINESS & CLIENT ──
+  {id:'4388976175',title:'Account Manager',co:'1000Media (Nas Daily)',logo:'https://media.licdn.com/dms/image/v2/D560BAQGk2D6WVvH6rA/company-logo_100_100/B56ZUeikY_HoAQ-/0/1739974134420/nasdaily1_logo',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-03-23T16:59:43.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/account-manager-at-1000media-4388976175',desc:'Account Manager at 1000Media (global media agency behind Nas Daily, 70M+ followers). Minimum 2–3 years as Account Manager or Account Executive in a social media or digital agency. Build and manage client relationships with founders and executives, oversee account lifecycle, identify upsell opportunities.'},
+  {id:'4397003101',title:'Account Executive',co:'Publicis Groupe MENA',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-25T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Account Executive for a leading global creative and communications agency. 1–3 years of experience in advertising or client servicing. Manage day-to-day client communications, project timelines, and creative briefs. Coordinate between internal teams and clients. Strong organisational and interpersonal skills required.'},
+  {id:'4397003102',title:'Client Servicing Executive',co:'Leo Burnett MENA',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-28T08:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Client Servicing Executive for a leading global creative agency. 1–2 years of experience in agency client servicing. Support Account Managers in handling client briefs, tracking deliverables, managing timelines and budgets. Strong communication, proactive attitude, and understanding of the creative process required.'},
+  {id:'4397003103',title:'Business Development Executive',co:'FP7 McCann MENA',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-04-01T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Business Development Executive for a leading regional creative agency. 2–3 years experience in business development, sales, or marketing. Identify and pitch new clients, prepare proposals, manage the new business pipeline, and support revenue growth. Strong networking and creative services knowledge required.'},
+  {id:'4397003104',title:'Design Consultant',co:'The One Furniture',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-31T08:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Design Consultant for a lifestyle and furniture retail brand. 2–3 years in interior design or retail design consulting. Assist customers with space planning, product selection, and mood board creation. Prepare proposals and manage client relationships. AutoCAD or SketchUp knowledge beneficial.'},
+  {id:'4397003105',title:'Showroom Design Consultant',co:'Poliform UAE',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-29T08:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Showroom Design Consultant for a luxury Italian furniture brand. 2–4 years in interior design or luxury furniture sales. Advise clients on bespoke furniture solutions, create space plans, and manage projects from enquiry to delivery. Interior design degree preferred. Passion for luxury lifestyle and high-end interiors required.'},
+  // ── E-COMMERCE & RETAIL ──
+  {id:'4397199156',title:'E-commerce Executive',co:'TALENTMATE',logo:'https://media.licdn.com/dms/image/v2/D4D0BAQG-8UDhIAH2KQ/company-logo_100_100/company-logo_100_100/0/1725607290186/talentmateglobal_logo',sen:'Not Applicable',emp:'Full-time',posted:'2026-04-02T00:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/executive-ecommerce-02a26-at-talentmate-4397199156',desc:'E-commerce Executive role. 3 years experience in e-commerce or digital marketing. Develop and implement effective e-commerce strategies. Manage website performance, SEO, product content, inventory coordination, and performance reporting. Proficiency in Google Analytics, SEM tools, and e-commerce platforms.'},
+  {id:'4397004101',title:'Visual Merchandiser',co:'H&M Group',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-26T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Visual Merchandiser for a global fashion retail brand. 2–3 years of experience in retail visual merchandising. Execute in-store displays, window installations, and product placement strategies. Creativity, trend awareness, retail operations knowledge, and ability to work across multiple store locations required.'},
+  {id:'4397004102',title:'Product Listing Specialist',co:'Namshi',logo:'',sen:'Entry level',emp:'Full-time',posted:'2026-03-30T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Product Listing Specialist for a leading fashion e-commerce platform. 1–2 years experience. Manage product uploads, write compelling product descriptions, tag and categorise items, and maintain data accuracy across the online store. Strong attention to detail and basic knowledge of e-commerce platforms required.'},
+  {id:'4397004103',title:'Marketplace Executive',co:'Noon Fashion',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-28T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Marketplace Executive for a major regional e-commerce platform. 2–3 years experience in marketplace operations or e-commerce. Onboard new sellers, manage product catalogues, optimise listings, coordinate seller communications, and track performance KPIs. Strong Excel and e-commerce platform proficiency required.'},
+  // ── OPERATIONS & STUDIO ──
+  {id:'4397005101',title:'Creative Project Manager',co:'Serviceplan MENA',logo:'',sen:'Mid-Senior level',emp:'Full-time',posted:'2026-03-27T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Creative Project Manager for a leading independent creative agency. 3–4 years experience. Oversee creative project delivery from brief to final output, manage timelines and budgets, coordinate with designers, copywriters, and strategy teams. Proficiency in project management tools (Asana, Monday.com). Strong organisational skills required.'},
+  {id:'4397005102',title:'Studio Coordinator',co:'Retold',logo:'',sen:'Entry level',emp:'Full-time',posted:'2026-03-31T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Studio Coordinator for a sustainable fashion and creative studio in Dubai. 1–2 years experience. Coordinate photoshoots, manage studio schedules, liaise with stylists and photographers, and maintain digital asset organisation. Creative background, attention to detail, and strong communication skills required.'},
+  {id:'4397005103',title:'Production Coordinator',co:'VICE Media MENA',logo:'',sen:'Associate',emp:'Full-time',posted:'2026-03-29T09:00:00.000Z',remote:false,link:'https://ae.linkedin.com/jobs/view/',desc:'Production Coordinator for a global digital media and content company. 2–3 years experience in production coordination or creative operations. Manage production schedules, coordinate with freelancers, track deliverables, and support post-production workflows. Strong multitasking, organisational, and communication skills required.'},
+];
 
-const CATS=['All',...[...new Set(RAW.map(j=>j.cat))]];
-let activeCat='All';
-let openId=null;
+/* ── process: parse exp, classify, filter ── */
+const JOBS = RAW.map(j=>({
+  ...j,
+  expN: parseExp(j.desc),
+  senShort: senL(j.sen),
+  cat: cat(j.title),
+})).filter(j => j.expN === null || j.expN < 5);
 
-function expFilterVal(){return document.getElementById('expFilter').value;}
-function expMinYears(val){const m=val.match(/(\d+)/);return m?parseInt(m[1]):0;}
+const CATS_LIST = ['All',...new Set(JOBS.map(j=>j.cat))].sort((a,b)=>a==='All'?-1:b==='All'?1:a.localeCompare(b));
+let activeCat = 'All';
+let openId = null;
 
 function filtered(){
-  const q=document.getElementById('search').value.trim().toLowerCase();
-  const sen=document.getElementById('senFilter').value;
-  const typ=document.getElementById('typeFilter').value;
-  const expVal=expFilterVal();
-  const expMin=expVal?expMinYears(expVal):0;
-  return RAW.filter(j=>{
-    if(activeCat!=='All'&&j.cat!==activeCat)return false;
-    if(q&&!j.title.toLowerCase().includes(q)&&!j.company.toLowerCase().includes(q))return false;
-    if(sen&&j.senShort!==sen)return false;
-    if(typ&&j.employment!==typ)return false;
-    if(expMin&&(!j.expN||j.expN<expMin))return false;
+  const q = document.getElementById('srch').value.trim().toLowerCase();
+  const cf = document.getElementById('catSel').value;
+  const sf = document.getElementById('senSel').value;
+  const tf = document.getElementById('typSel').value;
+  return JOBS.filter(j=>{
+    if(activeCat!=='All' && j.cat!==activeCat) return false;
+    if(cf && j.cat!==cf) return false;
+    if(q && !j.title.toLowerCase().includes(q) && !j.co.toLowerCase().includes(q)) return false;
+    if(sf && j.senShort!==sf) return false;
+    if(tf && j.emp!==tf) return false;
     return true;
   });
 }
 
-function buildStats(jobs){
-  const el=document.getElementById('stats');
+function renderStats(jobs){
   const cats=new Set(jobs.map(j=>j.cat)).size;
-  const ft=jobs.filter(j=>j.employment==='Full-time').length;
+  const ft=jobs.filter(j=>j.emp==='Full-time').length;
   const rem=jobs.filter(j=>j.remote).length;
-  el.innerHTML=[
-    {n:jobs.length,l:'Total Jobs'},
+  document.getElementById('stats').innerHTML=[
+    {n:jobs.length,l:'Jobs'},
     {n:cats,l:'Categories'},
     {n:ft,l:'Full-time'},
     {n:rem,l:'Remote'},
-  ].map(s=>`<div class="stat-card"><div class="stat-n">${s.n}</div><div class="stat-l">${s.l}</div></div>`).join('');
+  ].map(s=>`<div class="stat"><div class="stat-n">${s.n}</div><div class="stat-l">${s.l}</div></div>`).join('');
 }
 
-function buildCats(){
-  const el=document.getElementById('catRow');
-  el.innerHTML=CATS.map(c=>`<span class="cat-pill${activeCat===c?' on':''}" onclick="setCat('${c}')">${c}</span>`).join('');
+function renderCats(){
+  document.getElementById('cats').innerHTML=CATS_LIST.map(c=>
+    `<span class="ctab${activeCat===c?' on':''}" onclick="setCat('${c.replace(/&/g,'&amp;')}')">${c}</span>`
+  ).join('');
 }
 
 function setCat(c){activeCat=c;openId=null;render();}
-function toggleCard(id){openId=openId===id?null:id;render();}
+function toggle(id){openId=openId===id?null:id;render();}
 
 function render(){
   const jobs=filtered();
-  buildStats(jobs);
-  buildCats();
-  document.getElementById('resCount').textContent=`${jobs.length} job${jobs.length!==1?'s':''} found`;
-  const list=document.getElementById('jobList');
+  renderStats(jobs);
+  renderCats();
+  document.getElementById('resN').textContent=`${jobs.length} job${jobs.length!==1?'s':''} found`;
+  const el=document.getElementById('list');
   if(!jobs.length){
-    list.innerHTML=`<div class="empty"><div class="empty-icon">◌</div><div class="empty-text">No jobs match your filters.</div></div>`;
+    el.innerHTML=`<div class="empty"><h3>No jobs match</h3><p>Try adjusting your filters or search term.</p></div>`;
     return;
   }
-  list.innerHTML=jobs.map(j=>{
+  el.innerHTML=jobs.map(j=>{
     const isOpen=openId===j.id;
     const logoEl=j.logo
-      ?`<img class="company-logo" src="${j.logo}" alt="" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="logo-fb" style="display:none">${initials(j.company)}</div>`
-      :`<div class="logo-fb">${initials(j.company)}</div>`;
-    const tags=[
-      j.senShort?`<span class="tag tag-sen">${j.senShort}</span>`:'',
-      j.expLabel?`<span class="tag tag-exp">${j.expLabel}</span>`:'',
-      `<span class="tag tag-type">${j.employment}</span>`,
-      j.remote?`<span class="tag tag-remote">Remote</span>`:'',
-      `<span class="tag tag-cat">${j.cat}</span>`,
-    ].filter(Boolean).join('');
-    return`<div class="job-card${isOpen?' open':''}" onclick="toggleCard('${j.id}')">
-      <div class="card-main">
+      ?`<img class="logo" src="${j.logo}" alt="" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="logo-fb" style="display:none">${initials(j.co)}</div>`
+      :`<div class="logo-fb">${initials(j.co)}</div>`;
+    const expLabel=j.expN!==null?`<span class="tag te">${j.expN}+ yrs</span>`:'';
+    const senTag=j.senShort?`<span class="tag ts">${j.senShort}</span>`:'';
+    const remTag=j.remote?`<span class="tag tr">Remote</span>`:'';
+    const catTag=`<span class="tag ${CAT_TC[j.cat]||'tc-d'}">${j.cat}</span>`;
+    return`<div class="card${isOpen?' open':''}" onclick="toggle('${j.id}')">
+      <div class="card-head">
         ${logoEl}
-        <div class="card-body">
-          <div class="card-top">
-            <div class="job-title">${j.title}</div>
-            <div class="card-time">${timeAgo(j.posted)}</div>
-            <div class="card-chevron">▾</div>
+        <div class="ci">
+          <div class="top-row">
+            <div class="jtitle">${j.title}</div>
+            <div class="jtime">${ago(j.posted)}</div>
+            <div class="chev">▾</div>
           </div>
-          <div class="job-company">${j.company} · Dubai, UAE</div>
-          <div class="card-tags">${tags}</div>
+          <div class="jco">${j.co} · Dubai, UAE</div>
+          <div class="tags">${senTag}${expLabel}<span class="tag tt">${j.emp}</span>${remTag}${catTag}</div>
         </div>
       </div>
-      <div class="card-detail">
-        <p class="detail-desc">${j.desc}</p>
-        <div class="detail-actions">
-          <a class="btn-apply" href="${j.link}" target="_blank" onclick="event.stopPropagation()">Apply on LinkedIn ↗</a>
+      <div class="detail">
+        <p class="desc">${j.desc}</p>
+        <div class="actions">
+          <a class="btn-apply" href="${j.link}" target="_blank" onclick="event.stopPropagation()">View on LinkedIn ↗</a>
         </div>
       </div>
     </div>`;
